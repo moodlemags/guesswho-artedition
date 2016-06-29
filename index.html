@@ -24,10 +24,10 @@
   <!-- grid of artists -->
     <div id="flex-container">
         <div id="artist"><img src="images/artists/avedon.jpg"  class="avedon" width="100px" height="100px"/></div>
-        <div id="artist" class="bacon"><img src="images/artists/bacon.jpg" alt="Francis Bacon" width="100px" height="100px" /></div>
-        <div id="artist" class="basquiat"><img src="images/artists/basquiat.jpg" alt="Jean-Michael Basquiat" width="100px" height="100px" /></div>
-        <div id="artist" class="bochner"><img src="images/artists/bochner.jpg" alt="Mel Bochner" width="100px" height="100px" /></div>
-        <div id="artist" class="bonnard"><img src="images/artists/bonnard.jpg" alt="Pierre Bonnard" width="100px" height="100px"/></div>
+        <div id="artist"><img src="images/artists/bacon.jpg" class="bacon" width="100px" height="100px" /></div>
+        <div id="artist"><img src="images/artists/basquiat.jpg" class="basquiat" width="100px" height="100px" /></div>
+        <div id="artist"><img src="images/artists/bochner.jpg"  class="bochner" width="100px" height="100px" /></div>
+        <div id="artist"><img src="images/artists/bonnard.jpg"  class="bonnard" width="100px" height="100px"/></div>
         <div id="artist" class="caravaggio"><img src="images/artists/caravaggio.jpg" alt="Michelangelo Merisi da Caravaggio" width="100px" height="100px"/></div>
         <div id="artist" class="cassatt"><img src="images/artists/cassatt.jpg" alt="Mary Cassatt" width="100px" height="100px"/></div>
         <div id="artist" class="chagall"><img src="images/artists/chagall.jpg" alt="Marc Chagall" width="100px" height="100px" /></div>
@@ -50,7 +50,12 @@
         <div id="artist" class="weems"><img src="images/artists/weems.jpg" alt="Carrie Mae Weems" width="100px" height="100px" /></div>
     </div>
   <!-- mystery card placeholder -->
-    <div><img src=images/default.jpg id="mystery-card" width: "100px" height: "100px"/></div>
+    <div><img src=images/default.jpg id="mystery-card" width: "100px" height: "100px"/>
+      <div class="guessButton"><button name="guess">Guess!</button></div>
+      <ul id="displayResults">
+
+      </ul>
+    </div>
 
   </body>
 </html>

@@ -22,6 +22,17 @@ h1 {
     right: 120px;
 }
 
+.guessButton {
+  position: absolute;
+  left: 1150px;
+  top: 200px;
+}
+
+#displayResults {
+  width: 200px;
+  height: 200px;
+  background-color: red;
+}
 #flex-container {
   margin-top: 10px;
   width: 60%;

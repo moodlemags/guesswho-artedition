@@ -1,0 +1,25 @@
+1) provide the mystery image that user has to find the artist of
+
+
+
+have an object of attributes w/ matching values of artist names
+- if an attribute is guessed then shade out the images w/ the class of the artist name
+step one: Object.prototype.hasOwnProperty.call(attributeSearch, "key"); (will return T or F)
+  --> if (^ is true) {print the names of the artists it's true about}
+step two: prompt - print the artists who have the attribute
+--> use this to print dead key-artists names
+                          var buz = {
+                          fog: 'stack'
+                        };
+
+                        for (var name in buz) {
+                          if (buz.hasOwnProperty(name)) {
+                            console.log('this is fog (' + name + ') for sure. Value: ' + buz[name]);
+                          }
+                          else {
+                            console.log(name); // toString or something else
+                          }
+                        }
+step three: use dom stuff to find those w/ classes of the same and shade out
+
+make a background of a gallery
