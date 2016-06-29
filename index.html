@@ -8,18 +8,31 @@
     </script>
   </head>
   <body>
-  <!-- grid of faces -->
+  <!-- header & start -->
+  <h1>Welcome to Guess Who: <span class="fancy">Artist Edition!</span></h1>
+  <div class="button"><button name="start">I'm ready!</button></div>
+
+  <!-- nav bar -->
+    <div id="nav-bar">
+      <ul>
+        <li class="rules">How to Play</li>
+        <li>Learn More</li>
+        <li>Switch to Memory Game</li>
+      </ul>
+    </div>
+
+  <!-- grid of artists -->
     <div id="flex-container">
-        <div id="artist" class="avedon"><img src="images/artists/avedon.jpg" alt="Richard Avedon" width="100px" height="100px"/></div>
+        <div id="artist"><img src="images/artists/avedon.jpg"  class="avedon" width="100px" height="100px"/></div>
         <div id="artist" class="bacon"><img src="images/artists/bacon.jpg" alt="Francis Bacon" width="100px" height="100px" /></div>
         <div id="artist" class="basquiat"><img src="images/artists/basquiat.jpg" alt="Jean-Michael Basquiat" width="100px" height="100px" /></div>
+        <div id="artist" class="bochner"><img src="images/artists/bochner.jpg" alt="Mel Bochner" width="100px" height="100px" /></div>
         <div id="artist" class="bonnard"><img src="images/artists/bonnard.jpg" alt="Pierre Bonnard" width="100px" height="100px"/></div>
-        <div id="artist" class="bradford"><img src="images/artists/bradford.jpg" alt="Mark Bradford" width="100px" height="100px" /></div>
         <div id="artist" class="caravaggio"><img src="images/artists/caravaggio.jpg" alt="Michelangelo Merisi da Caravaggio" width="100px" height="100px"/></div>
         <div id="artist" class="cassatt"><img src="images/artists/cassatt.jpg" alt="Mary Cassatt" width="100px" height="100px"/></div>
         <div id="artist" class="chagall"><img src="images/artists/chagall.jpg" alt="Marc Chagall" width="100px" height="100px" /></div>
-        <div id="artist" class="da-vinci"><img src="images/artists/da-vinci.jpg" alt="Leonardo da Vinci" with="100px" height="100px" /></div>
         <div id="artist" class="dali"><img src="images/artists/dali.jpg" alt="Salvador Dali" width="100px" height="100px" /></div>
+        <div id="artist" class="davinci"><img src="images/artists/da-vinci.jpg" alt="Leonardo da Vinci" with="100px" height="100px" /></div>
         <div id="artist" class="defeo"><img src="images/artists/defeo.jpg" alt="Jay DeFeo" width="100px" height="100px" /></div>
         <div id="artist" class="degas"><img src="images/artists/degas.jpg" alt="Edgar Degas" width="100px" height="100px" /></div>
         <div id="artist" class="johns"><img src="images/artists/johns.jpg" alt="Jasper Johns" width="100px" height="100px"/></div>
@@ -35,10 +48,9 @@
         <div id="artist" class="rothko"><img src="images/artists/rothko.jpg" alt="Mark Rothko" width="100px" height="100px" /></div>
         <div id="artist" class="van-gogh"><img src="images/artists/van-gogh.jpg" alt="Vincent van Gogh" width="100px" height="100px" /></div>
         <div id="artist" class="weems"><img src="images/artists/weems.jpg" alt="Carrie Mae Weems" width="100px" height="100px" /></div>
-
-  <!-- mystery card placeholder -->
-        <div id="mystery-card"></div>
-
     </div>
+  <!-- mystery card placeholder -->
+    <div><img src=images/default.jpg id="mystery-card" width: "100px" height: "100px"/></div>
+
   </body>
 </html>

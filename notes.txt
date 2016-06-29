@@ -1,0 +1,23 @@
+<!-- GUESS WHO WITH ARTISTS & PAINTINGS
+
+html aspects:
+1) build out a grid of divs holding images that are 5x5
+2) create start buttons/skip turn/nav bar long side
+
+js:
+1) the two games are interactive so first prompt for which game to load, memory/trivia or guess who
+2) load the style
+3) have a randomly selected painting load as User 1's mystery card
+4) prompt user to guess a quality about the artist who painted it
+5) gray out any artists guessed
+6) user can either get 5 guesses or can click on an artist to guess
+7) at end of turn, logs the score for P1 and randomly selects a painting for player 2
+
+QUESTIONS:
+- integrating images & objects, or is it best to stick with an array --> object key image and value link works
+- how to randomly select non-integers, or should I have the paintings be correlated w/ an ID # that is generated -- array of objects and then shuffle the object and that array # is the random
+
+
+TRIVIA OR MEMORY WITH SAME ARRAY OF ARTISTS AND PAINTINGS
+
+ -->
