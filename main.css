@@ -67,4 +67,6 @@ h1 {
 
 #mystery-card {
   float: right;
+  max-height: 300px;
+  max-width: 300px;
 }
