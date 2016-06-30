@@ -33,9 +33,11 @@ h1 {
 }
 
 #displayResults {
-  width: 200px;
-  height: 200px;
-  background-color: red;
+  width: 400px;
+  height: 100px;
+  background-color: lightgray;
+  float: right;
+  color: black;
 }
 #flex-container {
   margin-top: 50px;
