@@ -16,30 +16,55 @@ var artists = [
     { name: "Richard Avedon",
       isAlive: false,
       gender: "male",
+      nationality: "american",
+      facialHair: false,
+      hair: "cool hair",
+      decade: "20th century",
+      bearded: false,
       artwork: paintingsArray[0],
       html: document.getElementsByClassName('avedon')
     },
     { name: "Francis Bacon",
       isAlive: false,
       gender: "male",
+      nationality: "british",
+      facialHair: false,
+      hair: "average",
+      decade: "20th century",
+      bearded: false,
       artwork: paintingsArray[1],
       html: document.getElementsByClassName('bacon')
     },
     { name: "Jean-Michel Basquiat ",
       isAlive: false,
       gender: "male",
+      nationality: "american",
+      facialHair: false,
+      hair: "cool hair",
+      decade: "20th century",
+      bearded: false,
       artwork: paintingsArray[2],
       html: document.getElementsByClassName('basquiat')
     },
     { name: "Mel Bochner",
       isAlive: true,
       gender: "male",
+      nationality: "american",
+      facialHair: false,
+      hair: "average",
+      decade: "20th century",
+      bearded: false,
       artwork: paintingsArray[3],
       html: document.getElementsByClassName('bochner')
     },
     { name: "Pierre Bonnard",
       isAlive: false,
       gender: "male",
+      nationality: "french",
+      facialHair: true,
+      hair: "average",
+      decade: "19th century",
+      bearded: false,
       artwork: paintingsArray[4],
       html: document.getElementsByClassName('bonnard')
     }
@@ -73,16 +98,66 @@ document.addEventListener('DOMContentLoaded', function(){
               var userInput = (prompt("Is my artist:  "));
               console.log(userInput);
 //ALIVE OR DEAD
-              if (userInput == 'alive') {
-                    if (artists[mysteryArtist].isAlive == true) {
+              if (userInput == 'alive' || userInput == 'male'|| userInput == 'female' || userInput == 'dead' || userInput == 'moustache' || userInput == 'cool hair' || userInput == '19th century' || userInput == '20th century' || userInput == '15th century' || userInput == ' 16th century' || userInput == 'beard' || userInput == 'american') {
+                    if (userInput == 'alive' && artists[mysteryArtist].isAlive == true) {
                             console.log('Great question! Your artist is alive. We will now get rid of all dead artists');
-                        } else if (artists[mysteryArtist].isAlive !== true) {
-                            console.log('Oh no! Your artist is dead. I am sorry for your loss') }
-                        } else if ( userInput == 'male') {
-                            console.log('dude')
-                        } else {console.log('not working')}
-              console.log(artists[mysteryArtist].isAlive)
+                        } else if (userInput == 'alive' && artists[mysteryArtist].isAlive !== true) {
+                            console.log('Oh no! Your artist is dead. I am sorry for your loss')
+                        } else if (userInput == 'male' && artists[mysteryArtist].gender == 'male') {
+                            console.log('Great question! Your artist is a man. We will now get rid of all female artists');
+                        } else if (userInput == 'male' && artists[mysteryArtist].gender !== 'male') {
+                            console.log('Nope! Your artist is not a man');
+                        } else if (userInput == 'female' && artists[mysteryArtist].gender !== 'male') {
+                            console.log('Great question! Your artist is a woman. We will now get rid of all male artists');
+                        } else if (userInput == 'female' && artists[mysteryArtist].gender == 'male') {
+                            console.log('Nope! Your artist is not a woman');
+                        } else if (userInput == 'dead' && artists[mysteryArtist].isAlive !== true) {
+                            console.log('Oh no! Your artist is dead. I am sorry for your loss. But your guess was right!');
+                        } else if (userInput == 'dead' && artists[mysteryArtist].isAlive == true) {
+                            console.log('Bad luck! Your artist is alive, but your guess was wrong');
+                        } else if (userInput == 'moustache' && artists[mysteryArtist].facialHair == true) {
+                            console.log('Awesome! Your artist has cool artistic facial hair');
+                        } else if (userInput == 'moustache' && artists[mysteryArtist].facialHair !== true) {
+                            console.log('Too bad. Your artist does not have cool facial hair');
+                        } else if (userInput == 'cool hair' && artists[mysteryArtist].hair == true) {
+                            console.log('Are you not jealous? Your artist has some cool hair');
+                        } else if (userInput == 'cool hair' && artists[mysteryArtist].hair !== true) {
+                            console.log('Dang. Your artist has some average hair');
+                        }  else if (userInput == '19th century' && artists[mysteryArtist].decade == '19th century') {
+                            console.log('Good guess! Your artist was kickin it during the 1800s');
+                        }  else if (userInput == '19th century' && artists[mysteryArtist].decade !== '19th century') {
+                              console.log('Nope! Wrong century');
+                        }  else if (userInput == '20th century' && artists[mysteryArtist].decade == '20th century') {
+                            console.log('Good guess! Your artist was living in the 1900s.... I wonder if he/she is still alive...');
+                        }  else if (userInput == '20th century' && artists[mysteryArtist].decade !== '20th century') {
+                            console.log('Nope! Wrong century');
+                        } else if (userInput == '18th century' && artists[mysteryArtist].decade == '18th century') {
+                            console.log('Good guess! Your artist was kickin it during the 1700s');
+                        }  else if (userInput == '18th century' && artists[mysteryArtist].decade !== '18th century') {
+                            console.log('Nope! Wrong century');
+                        } else if (userInput == '17th century' && artists[mysteryArtist].decade == '17th century') {
+                            console.log('Good guess! Your artist was kickin it during the 1600s');
+                        }  else if (userInput == '17th century' && artists[mysteryArtist].decade !== '17th century') {
+                            console.log('Nope! Wrong century');
+                        } else if (userInput == '16th century' && artists[mysteryArtist].decade == '16th century') {
+                            console.log('Good guess! Your artist was kickin it during the 1500s');
+                        }  else if (userInput == '16th century' && artists[mysteryArtist].decade !== '16th century') {
+                            console.log('Nope! Wrong century');
+                        } else if (userInput == '15th century' && artists[mysteryArtist].decade == '15th century') {
+                            console.log('Good guess! Your artist is ancient! Must be Da Vinci or somethin');
+                        } else if (userInput == '15th century' && artists[mysteryArtist].decade !== '15th century') {
+                            console.log('Nope! Wrong century');
+                        }  else if (userInput == 'beard' && artists[mysteryArtist].bearded == true) {
+                            console.log('Yes! Your artist has a sick beard.');
+                        }  else if (userInput == 'beard' && artists[mysteryArtist].bearded !== true) {
+                            console.log('It  unfortunate that your artist does not have a sick beard.');
+}
 
+
+                        else  { console.log('HELP') }
+                      }
+              // console.log(artists[mysteryArtist].isAlive)
+  // };
 
           // if (userInput === artists[i].isAlive) {
           //   console.log('working')
@@ -97,7 +172,7 @@ document.addEventListener('DOMContentLoaded', function(){
             //             guessesArray.push(newAtt);
             //             console.log(guessesArray);
             //             console.log(Object.prototype.hasOwnProperty.call(artists, guessesArray));
-    });
+
 
 
 
@@ -146,4 +221,4 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
 //THE END OF THE DOM CONTENT LOADED FUNCTION
-// });
+});
