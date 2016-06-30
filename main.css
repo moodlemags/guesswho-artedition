@@ -1,5 +1,9 @@
 body {
-  background-color: #90C3D4;
+  background-color: white;
+  background-image: url(images/gallery.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 .fancy {
   font-style: italic;
@@ -34,16 +38,13 @@ h1 {
   background-color: red;
 }
 #flex-container {
-  margin-top: 10px;
-  width: 60%;
+  margin-top: 50px;
+  width: 55%;
   height: 80%;
   display: inline-flex;
   flex-direction: row;
   flex-wrap: wrap;
-  background-color: #D7DCDE;
   align-items: center;
-  justify-content: center;
-  margin-left: 80px;
 }
 
 #artist{
