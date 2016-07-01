@@ -49,6 +49,10 @@ h1 {
   align-items: center;
 }
 
+#grayArtists {
+  opacity: .3;
+}
+
 #artist{
   display: flex;
   width: 18%;
