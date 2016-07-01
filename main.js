@@ -358,8 +358,10 @@ document.addEventListener('DOMContentLoaded', function(){
 
         var beginGuessing = document.getElementsByClassName("guessButton")[0];
           beginGuessing.addEventListener('click', function(){
-            if (guesses <= 5) {
+            if (guesses < 5) {
               guesses ++;
+            } else if (guesses == 5)  {
+              alert('Hopefully you know who your artist is now! Please use your last turn to guess the artist and win!')
             } else {
               alert(`Game Over! That was 5 rounds -- the artist of your painting was ${paintingsArray[mysteryArtist]}. Now hand it over for player 2!`);
             }
@@ -493,9 +495,9 @@ document.addEventListener('DOMContentLoaded', function(){
                   var node = document.getElementById('displayResults');
                   var guess = document.createTextNode('Too bad. Your artist does not have a cool moustache');
                   node.appendChild(guess);      }
-                  else if (userInput !== artists[mysteryArtist].class) {
+                  else if (guesses == 5 && userInput !== artists[mysteryArtist].class) {
                     var node = document.getElementById('displayResults');
-                    var guess = document.createTextNode('Sorry, that guess is not correct. Try again!');
+                    var guess = document.createTextNode(`Sorry, that guess is not correct. Your artist is ${userInput}. Better luck next time!`);
                     node.appendChild(guess);
                   }
                 else  { console.log('HELP') }

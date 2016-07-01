@@ -1,4 +1,6 @@
 # Welcome to GuessWho: Art Edition!
+### Technology used --
+HTML, CSS, Javascript
 
 ### The why --
 The game(s) that I built were focused on a huge lack in a niche market that I've noticed over my academic/professional career, which is a resource for learning and studying art history. For this game, I decided to be inspired by my love of art and the board game Guess Who.
@@ -14,5 +16,14 @@ The game was more complicated to build than I had initially anticipated due to h
 
 This game relies heavily on for loops, if statements and connectivity w/ DOM manipulation. After the mystery painting (and therefore artist) for the current player is loaded, the game structure has a framework built on the attributes of that artist. Each turn takes in a bit of input (the guess) and is looped through all if/else if statements to see if the guess criteria matches any of the statements. If the criteria is not one that was fleshed out, it will say as much and prompt to guess another criteria (this is a new guess used). If the guess does match the criteria, all artists whose criteria does NOT match the painting/artist is pushed into a new array of no-longer-valid-artists, which are then removed from the board. The next guess refines the artists remaining so on and so forth until there is either only one artist left/no guesses left/player has guessed correctly. In theory, I'd like the end of the game to prompt to learn more about not only the artist but the painting so that it's a learning tool for continuing art education.
 
+### The code --
+There were three different sections that I coded.
+
+The first section is the model, it contains the array of paintings that the mysteryCard is dealt out of and the array of objects that contains the artists and all of their attribute data that is used to play the game. This set up took up almost 350 lines of code, which is a LOT. The first time that I made the game, I set up the objects all in a line so that my code was more condensed. This made it very hard to problem-shoot as it was visually quite difficult to parse through. When I realized I had to start again from scratch, I decided that this model would be more efficient if each attribute was aesthetically organized on its own line for clarity and ease to call from the functions.
+
+The second part of my code is the functional set up. This is made up by the DOM Content Loaded listener that waits for the user to click "I'm Ready" before performing any functions. It also holds the code that produces they mystery painting and it's corresponding artist object so that the rest of the game functions.
+
+The third part of the code is a very large if statement with multiple nested loops within.
+
 ### Difficulties --
-Where to begin! My pseudo-code did not take into consideration the complexity of the looping that I had to do, and when I changed the model I still followed my old pseudo code for the final and beginning statements -- which is why they are a bit glitchy, as I only fixed them a bit before the project is due. Additionally, on occasion the function that iterates over all the criteria decides to produce false info -- i.e. remove artists incorrectly or leave incorrectly. I haven't had time to figure out why they are doing so, but I fully intend to as I would like to work more on this game and put it in my portfolio. The ideas I love and I know that there is a much cleaner way to do the code, which I look forward to exploring as we continue to learn. 
+Where to begin! My pseudo-code did not take into consideration the complexity of the looping that I had to do, and when I changed the model I still followed my old pseudo code for the final and beginning statements -- which is why they are a bit glitchy, as I only fixed them a bit before the project is due. Additionally, on occasion the function that iterates over all the criteria decides to produce false info -- i.e. remove artists incorrectly or leave incorrectly. I haven't had time to figure out why they are doing so, but I fully intend to as I would like to work more on this game and put it in my portfolio. The ideas I love and I know that there is a much cleaner way to do the code, which I look forward to exploring as we continue to learn.
