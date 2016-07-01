@@ -355,6 +355,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
 //GAMEBEGIN FUNCTION - Now we start the game aspect, the attributes the user guesses should be compared to mysteryArtist and evaluated if true or false
+
         var beginGuessing = document.getElementsByClassName("guessButton")[0];
           beginGuessing.addEventListener('click', function(){
             if (guesses <= 5) {
@@ -366,7 +367,7 @@ document.addEventListener('DOMContentLoaded', function(){
               console.log(userInput);
               console.log(artists);
 //large if statement function begins:
-              if (userInput == 'alive' || userInput == 'male'|| userInput == 'female' || userInput == 'dead' || userInput == 'moustache' || userInput == 'cool hair' || userInput == '19th century' || userInput == '20th century' || userInput == '15th century' || userInput == ' 16th century' || userInput == 'beard' || userInput == 'american') {
+              if (userInput == 'alive' || userInput == 'male'|| userInput == 'female' || userInput == 'dead' || userInput == 'moustache' || userInput == 'cool hair' || userInput == '19th century' || userInput == '20th century' || userInput == '15th century' || userInput == ' 16th century' || userInput == 'beard' || userInput == 'american' || userInput == artists[mysteryArtist].class) {
                     if (userInput == 'alive' && artists[mysteryArtist].isAlive == true) {
 /*gray dead*/                   var node = document.getElementById('displayResults');
                                 var guess = document.createTextNode('you got a live one! all dead artists will be removed from the board');
@@ -380,8 +381,13 @@ document.addEventListener('DOMContentLoaded', function(){
                                       console.log(grayArtists);
                                     console.log(artists)
                                   } else { console.log('alive'); }};
-
                        }
+                       else if (userInput == artists[mysteryArtist].class) {
+                          alert("YES! You win!!!")
+                           var node = document.getElementById('displayResults');
+                           var guess = document.createTextNode(`That is correct! Your artist is ${userInput}. You have won!`);
+                           node.appendChild(guess);
+}
                          else if (userInput == 'male' && artists[mysteryArtist].gender == 'male') {
 /*gray female*/                var node = document.getElementById('displayResults');
                                var guess = document.createTextNode('Great guess - your artist is male. Bye bye lady artists!');
@@ -487,11 +493,14 @@ document.addEventListener('DOMContentLoaded', function(){
                   var node = document.getElementById('displayResults');
                   var guess = document.createTextNode('Too bad. Your artist does not have a cool moustache');
                   node.appendChild(guess);      }
-                  else if (userInput == artists.name) {
-                    prompt('you have won!!!!')
-                  }  else  { console.log('HELP') }
-                      }
-                console.log(grayArtists)
+                  else if (userInput !== artists[mysteryArtist].class) {
+                    var node = document.getElementById('displayResults');
+                    var guess = document.createTextNode('Sorry, that guess is not correct. Try again!');
+                    node.appendChild(guess);
+                  }
+                else  { console.log('HELP') }
+                }
+                // console.log(grayArtists)
         for (var j = 0; j < grayArtists.length; j++){
           console.log(grayArtists[j]);
           grayArtists[j][0].style.display = "none";
