@@ -360,7 +360,7 @@ document.addEventListener('DOMContentLoaded', function(){
             if (guesses <= 5) {
               guesses ++;
             } else {
-              alert(`Game Over! That was 5 rounds -- the artist of your painting was ${paintingsArray[mysteryArtist]}`);
+              alert(`Game Over! That was 5 rounds -- the artist of your painting was ${paintingsArray[mysteryArtist]}. Now hand it over for player 2!`);
             }
               var userInput = (prompt("Is my artist:  "));
               console.log(userInput);
@@ -487,7 +487,7 @@ document.addEventListener('DOMContentLoaded', function(){
                   var node = document.getElementById('displayResults');
                   var guess = document.createTextNode('Too bad. Your artist does not have a cool moustache');
                   node.appendChild(guess);      }
-                  else if (userInput == mysteryArtist) {
+                  else if (userInput == artists.name) {
                     prompt('you have won!!!!')
                   }  else  { console.log('HELP') }
                       }
