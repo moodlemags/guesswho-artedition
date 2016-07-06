@@ -23,7 +23,11 @@ The first section is the model, it contains the array of paintings that the myst
 
 The second part of my code is the functional set up. This is made up by the DOM Content Loaded listener that waits for the user to click "I'm Ready" before performing any functions. It also holds the code that produces they mystery painting and it's corresponding artist object so that the rest of the game functions.
 
-The third part of the code is a very large if statement with multiple nested loops within.
+The third part of the code is a very large if statement with multiple nested loops within. The games movement is all reliant on the actions of the user. The user must press guess to be prompted to provide an attribute and repeat this until they are out of guesses. On the last guess, the user is prompted to guess the artist with their last turn. This part of the code takes the user input and will provide a message and get rid of any artists that they may have eliminated. If the user guesses the artist correctly, then they will have one!
 
 ### Difficulties --
 Where to begin! My pseudo-code did not take into consideration the complexity of the looping that I had to do, and when I changed the model I still followed my old pseudo code for the final and beginning statements -- which is why they are a bit glitchy, as I only fixed them a bit before the project is due. Additionally, on occasion the function that iterates over all the criteria decides to produce false info -- i.e. remove artists incorrectly or leave incorrectly. I haven't had time to figure out why they are doing so, but I fully intend to as I would like to work more on this game and put it in my portfolio. The ideas I love and I know that there is a much cleaner way to do the code, which I look forward to exploring as we continue to learn.
+Here are the problems that I currently would like to fix:
+- The user switching/score logging is not currently working
+- The user has to guess the artist in the class format (i.e. .monet) otherwise the program won't log if they've won
+- If the user guesses the WRONG artist it does not track accurately / especially on the last turn!
