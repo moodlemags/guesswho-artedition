@@ -10,11 +10,14 @@
 
   </head>
   <body>
+    <div class="hidden-start"></div>
   <!-- header & start -->
   <br><br>
   <h1>Welcome to Guess Who: <span class="fancy">Artist Edition!</span></h1>
   <div class="button"><button name="start">I'm ready!</button></div>
-
+  <div class="guessButton"><button name="guess">Guess!</button></div>
+  <div id="guess" class="hidden">
+  </div>
   <!-- nav bar -->
     <div id="nav-bar">
       <ul>
@@ -54,10 +57,12 @@
     </div>
   <!-- mystery card placeholder -->
     <div><img src=images/default.jpg id="mystery-card" width: "100px" height: "100px"/>
-      <div class="guessButton"><button name="guess">Guess!</button></div>
-      <ul id="displayResults">
-
-      </ul>
+      <!-- <div class="guessButton"><button name="guess">Guess!</button></div>
+      <div id="guess" class="hidden">
+        <input type="text" class="userGuess"></input>
+        <button class="userGuess">Is my artist?</button>
+      </div> -->
+      <ul id="displayResults">      </ul>
     </div>
 
   </body>

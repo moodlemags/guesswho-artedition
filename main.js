@@ -331,11 +331,10 @@ var artists = [
   ]
 //COMPLETE - MODEL --- alert with rules of how to play once content has loaded
 document.addEventListener('DOMContentLoaded', function(){
-  alert("Welcome to Guess Who: Artist Edition!")
+  console.log('artists data loaded')
+  // alert("Welcome to Guess Who: Artist Edition!")
        var howToPlay = document.getElementsByClassName("rules")[0];
-       howToPlay.addEventListener('click', function(){
-           alert("Thanks for playing Guess Who: Artist Edition!! \n\n Here are the rules for playing: \n As you may have noticed, you have already been dealt a mystery painting card. Your goal in this game is to guess who the artist of this painting is by eliminating all of the other artists. At the start of each round you will be prompted to guess an attribute. If your artist has this attribute, nothing will happen to the artists on the board but you will have an important piece of information! If your artist does not have this attribute, then all artists with such attribute will disappear. You will have 5 rounds in which to guess your artist, although if you know before 5 rounds are up feel free to click on your guess and see if you're right! Points are scored by how few turns it takes you to guess your artist plus an additional 10 pts if you guess correctly. After you've finished it is your opponents turn to play!")
-         });
+
 //MYSTERY CARD FUNCTION --  GET & DISPLAY THE MYSTERY CARD from PAINTINGS ARRAY
 //what i just did is move all of the variables out of the function into the global scope; the console logs are printing the arrays etc. before the card is dealt but that's not affecting the user so irrelevant to game play
       var guesses = 0;
@@ -343,10 +342,18 @@ document.addEventListener('DOMContentLoaded', function(){
       var mysteryCard = "img src=images/default.jpg";
       var getMysteryCard = document.getElementsByClassName("button")[0];
         getMysteryCard.addEventListener('click', function(){
+          //pop up instructions
+          event.preventDefault();
+          // var buttonAlerts = document.querySelector('.hidden-start');
+          // console.log(buttonAlerts)
+          // buttonAlerts.classList.remove('hidden-start');
+          // buttonAlerts.classList.add('visible-start');
+          // console.log(buttonAlerts)
+
+//mystery card dealt
                mysteryCard = Math.trunc(Math.random()*paintingsArray.length);
                 console.log(paintingsArray[mysteryCard]);
                   document.getElementById("mystery-card").src = paintingsArray[mysteryCard];
-                  console.log(mysteryCard);
               mysteryArtist = paintingsArray.indexOf(paintingsArray[mysteryCard]);
               console.log(mysteryArtist);
             });
@@ -355,7 +362,6 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
 //GAMEBEGIN FUNCTION - Now we start the game aspect, the attributes the user guesses should be compared to mysteryArtist and evaluated if true or false
-
         var beginGuessing = document.getElementsByClassName("guessButton")[0];
           beginGuessing.addEventListener('click', function(){
             if (guesses <= 5) {
@@ -363,9 +369,28 @@ document.addEventListener('DOMContentLoaded', function(){
             } else {
               alert(`Game Over! That was 5 rounds -- the artist of your painting was ${paintingsArray[mysteryArtist]}. Now hand it over for player 2!`);
             }
-              var userInput = (prompt("Is my artist:  "));
+
+              var guessBackground = document.querySelector('.hidden')
+              guessBackground.classList.remove('hidden');
+              guessBackground.classList.add('visible');
+
+              var guessBox = document.createElement('INPUT');
+              guessBox.setAttribute("type", "text"); //code found on MDN
+              guessBox.classList.add('inputButton')
+              guessBackground.appendChild(guessBox);
+              var guessSubmit = document.createElement('button');
+              // guessSubmit.setAttribute("type","submit");
+              guessBackground.appendChild(guessSubmit)
+              guessSubmit.innerHTML = "submit"
+              guessSubmit.classList.add('inputSubmit')
+          guessSubmit.addEventListener('click', function(){
+            guessBackground.classList.remove('visible');
+            guessBackground.classList.add('hidden');
+                          var userInput = guessBox.value;
+              // var userInput = (prompt("Is my artist:  "));
               console.log(userInput);
-              console.log(artists);
+
+              // console.log(artists);
 //large if statement function begins:
               if (userInput == 'alive' || userInput == 'male'|| userInput == 'female' || userInput == 'dead' || userInput == 'moustache' || userInput == 'cool hair' || userInput == '19th century' || userInput == '20th century' || userInput == '15th century' || userInput == ' 16th century' || userInput == 'beard' || userInput == 'american' || userInput == artists[mysteryArtist].class) {
                     if (userInput == 'alive' && artists[mysteryArtist].isAlive == true) {
@@ -504,7 +529,7 @@ document.addEventListener('DOMContentLoaded', function(){
         for (var j = 0; j < grayArtists.length; j++){
           console.log(grayArtists[j]);
           grayArtists[j][0].style.display = "none";
-        }
+        }   })
 
               // function removeArtists(el){
               //   for (var j = 0; j < el.length; j++){
